@@ -4,7 +4,6 @@
     $alunos = listaAlunos();
     $aluno = $alunos[0];
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
