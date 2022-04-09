@@ -5,6 +5,8 @@
     //pesquisar como se cria objetos php usando ARRAY
     //fazer o vetor de alunos como objetos, no qual voces vão colocar nome, idade e sexo nesse objeto
     //e criar um vetor de objeto aluno
+    //criar um vetor de objeto chamado aluno
+
 
     function listaAlunos(){
         return $GLOBALS['alunos'];
