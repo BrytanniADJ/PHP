@@ -1,30 +1,49 @@
 <?php
-    //Globais
-    $alunos = ['Bianca','Wisley','Claudia', 'Luiza', 'Marcos', 'Michele', 'Pedro', 'Sávio'];
+    // Globais
+    //$alunos = ['Bianca', 'Claudia', 'Luiza','Marcos', 'Michele','Pedro', 'Sávio', 'Wisley'];
 
-    //pesquisar como se cria objetos php usando ARRAY
-    //fazer o vetor de alunos como objetos, no qual voces vão colocar nome, idade e sexo nesse objeto
-    //e criar um vetor de objeto aluno
-    //criar um vetor de objeto chamado aluno
+    $alunos = [];
+    $pessoa = array('nome' => 'Bianca', 'idade' => 18, 'sexo' => 'f');
+    array_push($alunos, $pessoa);
+    $pessoa = array('nome' => 'Claudia', 'idade' => 18, 'sexo' => 'f');
+    array_push($alunos, $pessoa);
+    $pessoa = array('nome' => 'Luiza', 'idade' => 18, 'sexo' => 'f');
+    array_push($alunos, $pessoa);
+    $pessoa = array('nome' => 'Marcos', 'idade' => 18, 'sexo' => 'm');
+    array_push($alunos, $pessoa);
+    $pessoa = array('nome' => 'Michele', 'idade' => 18, 'sexo' => 'f');
+    array_push($alunos, $pessoa);
+    $pessoa = array('nome' => 'Pedro', 'idade' => 18, 'sexo' => 'm');
+    array_push($alunos, $pessoa);
+    $pessoa = array('nome' => 'Sávio', 'idade' => 18, 'sexo' => 'm');
+    array_push($alunos, $pessoa);
+    $pessoa = array('nome' => 'Wisley', 'idade' => 18, 'sexo' => 'm');
+    array_push($alunos, $pessoa);
 
+    var_dump($alunos);
+
+    // precisam pesquisar como se cria objetos no php usando ARRAY
+    // fazer o vetor de alunos como um objeto, no qual vocês vão 
+    // colocar nome, idade e sexo nesse objeto
+    // e criar um vetor de objeto aluno;
 
     function listaAlunos(){
         return $GLOBALS['alunos'];
-   }
-    function conectar(){ 
+    }
+    function conectar(){
         $server = '127.0.0.1';
         $username = 'root';
         $password = '';
-        $database = 'programadorweb';
+        $dataBase = 'programadorweb';
+        
+        $link = mysqli_connect( $server, $username ,$password, $dataBase);
 
-    $link = mysqli_connect($server, $username, $password, $database);
-    
-    if(mysqli_connect_errno()){
-        echo 'mysqli connection error: ' . mysqli_connect_error();
-    }else{
-        return $link;
+        if (mysqli_connect_errno()){
+            return ['mysqli connection error: ' . mysqli_connect_error()];
+        }else {
+            return $link;
+        }
     }
- }
     function listar_alunos(){
         $link = conectar();
         $result = mysqli_query($link, "SELECT nome, idade, sexo FROM alunos", MYSQLI_USE_RESULT);
@@ -33,5 +52,5 @@
 
         mysqli_close($link);
     }
-    var_dump(listar_alunos())
-?>
+    
+ ?>

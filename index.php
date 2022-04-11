@@ -1,7 +1,7 @@
 <?php
-    include './lib/listar.php';
+    include './lib/listar.php'; 
 
-    $alunos = listaAlunos();
+    $alunos = listaAlunos(); 
     $aluno = $alunos[0];
 ?>
 <!DOCTYPE html>
@@ -9,18 +9,18 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-wifth, initial-scale=1.0">
-    <title>Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOME</title>
 </head>
 <body>
     <header>
-        <a href="./index.php">Home</a>
-        <a href="./listaAlunos.php">Alunos</a>
+        <a href="/">HOME</a>
+        <a href="/listaAlunos.php">Alunos</a>
     </header>
     <main>
-        Olá,
+        OLá, 
         <?php
-            echo '<p>'. $aluno. '</p>'
+            echo '<p>'. $aluno . '</p>'
         ?>
     </main>
 </body>
